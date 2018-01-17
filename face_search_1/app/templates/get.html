@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="post" enctype="multipart/form-data" >
+{{form.as_p}}
+<input type="submit" value="ok"/>
+</form>
+<img src="{{path}}" width="100px" height="100px" >{{path}}
+
+<table>
+
+
+ {% for img in imgs %}
+    <tr>
+        <td>
+        {{img.uid}} <img src="/media/{{img.path}}" width="100px" height="100px">
+    </td>
+    </tr>
+{% endfor %}
+    </table>
+
+
+<table>
+     {% for likeimg in likesImg %}
+    <tr>
+        <td></td><td><img width="150px" height="150px" src="/media/{{likeimg}}"></td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
